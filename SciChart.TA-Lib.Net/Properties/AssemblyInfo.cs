@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SciChart.TechnicalIndicators")]
-[assembly: AssemblyDescription("TA-Lib.NET is an open source .NET AnyCPU compatible wrapper around the popular open source TA-Lib Financial Technical Analysis Library")]
+[assembly: AssemblyTitle("SciChart.TA-Lib.NET")]
+[assembly: AssemblyDescription("SciChart.TA-Lib.NET is an open source .NET AnyCPU compatible wrapper around the popular open source TA-Lib Financial Technical Analysis Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SciChart Ltd")]
-[assembly: AssemblyProduct("TA-Lib.NET")]
+[assembly: AssemblyProduct("SciChart.TA-Lib.NET")]
 [assembly: AssemblyCopyright("Copyright © 2016 SciChart Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
