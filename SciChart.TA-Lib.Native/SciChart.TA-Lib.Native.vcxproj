@@ -32,6 +32,12 @@
   <ItemGroup>
     <ClCompile Include="Empty.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\TA-Lib\c\include\ta_abstract.h" />
+    <ClInclude Include="..\TA-Lib\c\include\ta_common.h" />
+    <ClInclude Include="..\TA-Lib\c\include\ta_func.h" />
+    <ClInclude Include="..\TA-Lib\c\include\ta_libc.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A54A7050-07D5-4BF4-A588-7E059E7D2228}</ProjectGuid>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
