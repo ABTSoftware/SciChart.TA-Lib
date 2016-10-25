@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TA-Lib.Interop.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
