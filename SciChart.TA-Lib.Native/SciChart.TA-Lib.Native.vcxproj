@@ -38,6 +38,10 @@
     <ClInclude Include="..\TA-Lib\c\include\ta_func.h" />
     <ClInclude Include="..\TA-Lib\c\include\ta_libc.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="TA-Lib-CSharp.i" />
+    <None Include="TA-Lib.i" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A54A7050-07D5-4BF4-A588-7E059E7D2228}</ProjectGuid>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -81,10 +85,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TALib</TargetName>
+    <OutDir>$(SolutionDir)\SciChart.TA-Lib.Net\Resources\$(Platform)\</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)TA-Lib\c\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <PreBuildEvent>
       <Command>$(ProjectDir)Exec_Swig.bat</Command>
