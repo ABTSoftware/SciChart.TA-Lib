@@ -1,5 +1,19 @@
 // TALib: Requires unsafe modifier
-%typemap(csclassmodifiers) TALib "public unsafe partial class"
+%pragma(csharp) moduleclassmodifiers="public unsafe partial class"
+
+// Requires dynamic loading of native module before any PInvoke 
+// Modified from csharp.swg and remove standard static constructor using http://stackoverflow.com/questions/28718453/how-do-i-change-the-constructor-code-in-swig-generated-csharp-file
+%pragma(csharp) imclasscode=%{
+  static $imclassname()
+  {
+  	  // Dynamically load x64 x86 native library. See TA-Lib-CSharp.i for definition
+	  SciChart.TA_Lib.Net.NativeDllLoader.InitNativeLibs();
+  }
+%}
+
+// Require dynamic loading of native module before any PInvoke. 
+// Modified from csharphead.swg
+
 
 // include standard SWIG typemaps
 %include "arrays_csharp.i"
@@ -8,9 +22,6 @@
 %apply double FIXED[] {double* IN_ARRAY}
 %apply double FIXED[] {double* OUT_ARRAY}
 
-// ABOVE csclassmodifiers does not work on generated TALib static class so must apply at the method level
-// TODO: Find out how to apply this to all methods in TALib generated class
-%csmethodmodifiers TA_MA "public unsafe";
-
+// Apply typemapes for out parameters common to TA-Lib
 %apply int *OUTPUT { int *BEG_IDX}
 %apply int *OUTPUT { int *OUT_SIZE}

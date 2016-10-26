@@ -1,4 +1,4 @@
-"..\Lib\Swig\Swig.exe" -csharp -c++ -outfile "..\SciChart.TA-Lib.Net\TA-Lib.Interop.cs" -I..\TA-Lib\c\include -namespace SciChart.TA_Lib.Net TA-Lib.i  
+"..\Lib\Swig\Swig.exe" -csharp -c++ -DSWIG_CSHARP_NO_IMCLASS_STATIC_CONSTRUCTOR -outfile "..\SciChart.TA-Lib.Net\TA-Lib.Interop.cs"  -I..\TA-Lib\c\include -namespace SciChart.TA_Lib.Net TA-Lib.i  
 
 REM Add Pragma warning disable/enable around file contents 
 @echo off

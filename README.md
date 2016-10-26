@@ -6,6 +6,6 @@ Extensions to TA-Lib to allow compilation and inclusion in the .NET Platform wit
 
  - Compiles in Debug | x86 only at the moment
  - Requires VS2015 and Visual Studio C++ 2015 Runtime on target PC 
- - Working on Swig wrappers for TA-Lib and some basic tests to ensure / asset behaviour 
+ - Working on Swig wrappers for TA-Lib and some basic tests to ensure / assert behaviour 
  - TODO: Generate x64 and handle AnyCPU by dynamically loading the correct framework 
  - TODO: Nice .NET Wrapper around TA-Lib to give sensible syntax 

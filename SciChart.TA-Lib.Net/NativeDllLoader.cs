@@ -1,4 +1,15 @@
-﻿using System;
+﻿#region Header
+// --------------------------------------------------------------------
+// Project:           SciChart.TA-Lib.Net 
+// Description:       .NET AnyCPU Wrapper around TA-Lib technical indicator library 
+// Copyright:		  Copyright © 2013-2016 SciChart Ltd & TA-Lib Contributors
+// License:           
+//                    TA-Lib licensed under BSD http://ta-lib.org/hdr_dev.html
+//                    SciChart.TA-Lib.Net licensed under Apache v2.0 License https://www.apache.org/licenses/LICENSE-2.0
+// --------------------------------------------------------------------
+#endregion
+
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
