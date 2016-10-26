@@ -13,7 +13,7 @@ namespace SciChart.TA_Lib.Net.Tests
         [Test]
         public void AssertCanCallTALib()
         {
-            //NativeDllLoader.InitNativeLibs();
+            NativeDllLoader.InitNativeLibs();
             
             double[] closeValues = new double[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             int timePeriod = 3;
