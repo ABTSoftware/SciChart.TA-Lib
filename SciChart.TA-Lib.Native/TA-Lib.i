@@ -8,6 +8,17 @@
 // include standard SWIG typemaps 
 %include "typemaps.i"
 
+// Wrap std::exception to C# http://www.swig.org/Doc3.0/SWIGDocumentation.html
+%include "exception.i"
+
+%exception {
+  try {
+    $action
+  } catch (const std::exception& e) {
+    SWIG_exception(SWIG_RuntimeError, e.what());
+  }
+}
+
 // Strip all const qualifies, they are not relevant to scripts,
 // but may prevent SWIG release memory in proxy classes.
 // This is safe because TA-Lib never sets returned const char pointers
@@ -47,32 +58,4 @@
 
 %include "ta_defs.h"
 
-
-/*
- * TA_MA - Moving average
- * 
- * Input  = double
- * Output = double
- * 
- * Optional Parameters
- * -------------------
- * optInTimePeriod:(From 1 to 100000)
- *    Number of period
- * 
- * optInMAType:
- *    Type of Moving Average
- * 
- * 
- */
-TA_RetCode TA_MA( int           START_IDX,
-                  int           END_IDX,
-                  const double *IN_ARRAY /* inReal */,
-                  int           OPT_INT /* optInTimePeriod */, /* From 1 to 100000 */
-                  TA_MAType     OPT_MATYPE /* optInMAType */,
-                  int          *BEG_IDX,
-                  int          *OUT_SIZE,
-                  double       *OUT_ARRAY /* outReal */ );
-
-int TA_MA_Lookback( int           optInTimePeriod, /* From 1 to 100000 */
-                  TA_MAType     optInMAType ); 
-
+%include "ta_func.swg"
