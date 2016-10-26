@@ -22,6 +22,8 @@ namespace SciChart.TA_Lib.Net.Tests
             double[] outValues = new double[10];
 
             TALib.TA_MA(0, 9, closeValues, timePeriod, TA_MAType.TA_MAType_SMA, out beginIndex, out outLength, outValues);
+
+            Assert.That(outValues, Is.Not.Null);
         }
     }
 }
